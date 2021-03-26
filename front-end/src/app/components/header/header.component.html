@@ -1,0 +1,13 @@
+<mat-toolbar color='primary'>
+    <span>{{ 'header.title' | translate }}</span>
+    <span class="example-spacer"></span>
+    <span>{{ 'header.language' | translate }}:</span>
+    <button (click)="updateLanguage('en')" mat-icon-button class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon">
+        <img src="assets/flags/en_flag.jpg" alt="" class="flag">
+    </button>
+    <button (click)="updateLanguage('pt-BR')" mat-icon-button class="example-icon"
+        aria-label="Example icon-button with share icon">
+        <img src="assets/flags/pt-br_flag.jpg" alt="" class="flag">
+    </button>
+</mat-toolbar>

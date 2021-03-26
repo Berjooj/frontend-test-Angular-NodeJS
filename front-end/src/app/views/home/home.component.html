@@ -1,0 +1,86 @@
+<mat-card class="content">
+    <h1 class="title">{{ 'home.title' | translate}}</h1>
+    <div class="filters">
+        <div class="container">
+            <mat-icon aria-hidden="false" aria-label="Example search icon">search</mat-icon>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    {{ 'home.filter' | translate}}
+                </mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Ale" #input>
+            </mat-form-field>
+        </div>
+        <span class="example-spacer"></span>
+        <div class="container">
+            <mat-icon aria-hidden="false" aria-label="Example sort icon">sort</mat-icon>
+            <mat-form-field>
+                <mat-label>
+                    {{'home.select' | translate}}
+                </mat-label>
+                <mat-select [(value)]="filterSelected" (selectionChange)="sortData()">
+                    <mat-option>{{ 'home.none' | translate}}</mat-option>
+                    <mat-option value="name">{{ 'home.name' | translate}}</mat-option>
+                    <mat-option value="category">{{ 'home.category' | translate}}</mat-option>
+                    <mat-option value="country">{{ 'home.country' | translate}}</mat-option>
+                    <mat-option value="state">{{ 'home.state' | translate}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button mat-flat-button color="accent" (click)="selectRandom(1)">
+            <mat-icon aria-hidden="false" aria-label="Example cached icon">cached</mat-icon>
+            {{ 'home.random' | translate}}
+        </button>
+    </div>
+
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z2">
+            <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+                <td class="element-description-tr" mat-cell *matCellDef="let element"
+                    [attr.colspan]="columnsToDisplay.length">
+                    <div class="example-element-detail"
+                        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div class="example-element-description">
+                            <h1 class="element-title"> {{element.name}} </h1>
+
+                            <div><strong>{{ 'home.category' | translate }}:</strong> {{element.category}} </div>
+                            <div><strong>{{ 'home.abv' | translate }}:</strong> {{element.abv}} </div>
+                            <div><strong>{{ 'home.ibu' | translate }}:</strong> {{element.ibu}} </div>
+                            <div><strong>{{ 'home.address' | translate }}:</strong> {{element.address}} </div>
+                            <div><strong>{{ 'home.country' | translate }}:</strong> {{element.country}} </div>
+                            <div><strong>{{ 'home.state' | translate }}:</strong> {{element.state}} </div>
+                            <div><strong>{{ 'home.coordinates' | translate }}:</strong> {{element.coordinates}} </div>
+                            <div><strong>{{ 'home.description' | translate }}:</strong> {{element.description}} </div>
+
+                            <a (click)="openWebsite(element.website)" class="element-description-attribution">
+                                {{element.website}} </a>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+            <tr *matHeaderRowDef="columnsToDisplay; sticky: true" class="mat-header-row">
+                <th>{{ 'home.name' | translate }}</th>
+                <th>{{ 'home.category' | translate }}</th>
+                <th>{{ 'home.country' | translate }}</th>
+                <th>{{ 'home.state' | translate }}</th>
+            </tr>
+
+        </table>
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons class="paginator"></mat-paginator>
+</mat-card>

@@ -1,0 +1,161 @@
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:nth-child(4n-3) {
+    background: #eeeeee;
+}
+
+.element-description-tr {
+    background: #fafafa;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+    width: 30% !important;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.table-container {
+    position: relative;
+    height: 600px;
+    overflow: auto;
+}
+
+.fixed {
+    position: relative;
+    top: 0;
+}
+
+table {
+    width: 100% !important;
+}
+
+.element-description-attribution {
+    text-decoration: underline;
+    color: rgba(209, 160, 160, 0.8);
+}
+
+.element-description-attribution:hover {
+    cursor: pointer;
+}
+
+.mat-header-row {
+    width: 100%;
+    background-color: #263238;
+    color: white;
+}
+
+.mat-header-row th {
+    font-weight: 550;
+    width: 30%;
+    text-align: justify;
+}
+
+.mat-header-row th:first-child { 
+    text-indent: 22px;
+}
+
+.filters {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    margin-bottom: .75rem;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.filters mat-form-field {
+    height: 45px;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.filters button {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 35px;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    margin-right: 1rem;
+    flex-flow: row;
+}
+
+.container mat-icon {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+div strong {
+    font-weight: 500;
+}
+
+.title {
+    text-align: center;
+    font-weight: 550;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

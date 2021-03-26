@@ -1,0 +1,28 @@
+{
+    "header": {
+        "title": "Cervejaria (demonstração)",
+        "language": "Traduzir",
+        "text": "Esta é uma demonstração do ngx-translate"
+    },
+    "footer": {
+        "dev": "Desenvolvido por:",
+        "link": "Contato",
+        "powered": "Tecnologias usadas:"
+    },
+    "home": {
+        "abv": "Teor alcoólico",
+        "category": "Categoria",
+        "address": "Endereço",
+        "coordinates": "Coordenadas",
+        "country": "País",
+        "description": "Descrição",
+        "ibu": "IBU",
+        "name": "Nome",
+        "state": "Estado",
+        "filter": "Filtrar por nome",
+        "select": "Ordenar por",
+        "none": "Nenhum",
+        "random": "Selecionar bebida aleatória",
+        "title": "Lista de Cervejas"
+    }
+}

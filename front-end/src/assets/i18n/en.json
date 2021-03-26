@@ -1,0 +1,28 @@
+{
+    "header": {
+        "title": "Brewery (demo)",
+        "language": "Translate",
+        "text": "This is a simple demonstration app for ngx-translate"
+    },
+    "footer": {
+        "dev": "Made by:",
+        "link": "Contact",
+        "powered": "Powered by:"
+    },
+    "home": {
+        "abv": "Alcohol by volume",
+        "category": "Category",
+        "address": "Address",
+        "coordinates": "Coordinates",
+        "country": "Country",
+        "description": "Description",
+        "ibu": "IBU",
+        "name": "Name",
+        "state": "State",
+        "filter": "Filter by name",
+        "select": "Sort by",
+        "none": "None",
+        "random": "Select random beer",
+        "title": "Beer list"
+    }
+}
